@@ -15,7 +15,6 @@ public class PersonServiceImp extends UnicastRemoteObject implements PersonServi
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public List<PersonEntity> GetList() throws RemoteException {
 		// TODO Auto-generated method stub  
 		System.out.println("Get Person Start!");

